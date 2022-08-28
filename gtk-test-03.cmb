@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
+<cambalache-project version="0.10.3" target_tk="gtk+-3.0">
+  <ui>
+	(1,None,"gtk-test-03.ui","gtk-test-03.ui",None,None,None,None,None,None)
+  </ui>
+  <object>
+	(1,10,"GtkApplicationWindow","mainWindow",None,None,None,None,None),
+	(1,11,"GtkBox","theBox",10,None,None,None,None),
+	(1,13,"GtkBox",None,11,None,None,None,3),
+	(1,14,"GtkButton","exitButton",13,None,None,None,1),
+	(1,15,"GtkButton","generateCode",13,None,None,None,None),
+	(1,17,"GtkLabel",None,15,None,None,None,None),
+	(1,18,"GtkLabel",None,14,None,None,None,None),
+	(1,19,"GtkBox",None,11,None,None,None,2),
+	(1,20,"GtkFileChooserButton","srcLocation",19,None,None,None,3),
+	(1,22,"GtkFileChooserButton","sourceJsonFile",19,None,None,None,1),
+	(1,23,"GtkFileChooserButton","includeLocation",19,None,None,None,5),
+	(1,24,"GtkLabel",None,19,None,None,None,None),
+	(1,25,"GtkLabel",None,19,None,None,None,2),
+	(1,26,"GtkLabel",None,19,None,None,None,4)
+  </object>
+  <object_property>
+	(1,10,"GtkWindow","resizable","False",None,None,None,None,None),
+	(1,11,"GtkOrientable","orientation","vertical",None,None,None,None,None),
+	(1,11,"GtkWidget","halign","baseline",None,None,None,None,None),
+	(1,11,"GtkWidget","margin-right","5",None,None,None,None,None),
+	(1,13,"GtkWidget","halign","end",None,None,None,None,None),
+	(1,14,"GtkContainer","border-width","2",None,None,None,None,None),
+	(1,14,"GtkWidget","valign","center",None,None,None,None,None),
+	(1,15,"GtkContainer","border-width","2",None,None,None,None,None),
+	(1,17,"GtkLabel","label","generate",None,None,None,None,None),
+	(1,18,"GtkLabel","label","Exit",None,None,None,None,None),
+	(1,19,"GtkWidget","halign","end",None,None,None,None,None),
+	(1,20,"GtkFileChooser","action","select-folder",None,None,None,None,None),
+	(1,20,"GtkFileChooser","create-folders","False",None,None,None,None,None),
+	(1,20,"GtkFileChooserButton","title","Select a folder",None,None,None,None,None),
+	(1,20,"GtkWidget","halign","start",None,None,None,None,None),
+	(1,20,"GtkWidget","tooltip-text","Where cpp file must be written to",None,None,None,None,None),
+	(1,22,"GtkFileChooserButton","title","Select a JSON File",None,None,None,None,None),
+	(1,22,"GtkWidget","tooltip-text","Source Json File",None,None,None,None,None),
+	(1,23,"GtkFileChooser","action","select-folder",None,None,None,None,None),
+	(1,23,"GtkFileChooserButton","title","Select a Folder",None,None,None,None,None),
+	(1,23,"GtkWidget","tooltip-text","Where hpp file must be written to",None,None,None,None,None),
+	(1,24,"GtkLabel","label","JSON File",None,None,None,None,None),
+	(1,24,"GtkMisc","xpad","5",None,None,None,None,None),
+	(1,25,"GtkLabel","label","CPP Folder",None,None,None,None,None),
+	(1,25,"GtkMisc","xpad","5",None,None,None,None,None),
+	(1,26,"GtkLabel","label","HPP Folder",None,None,None,None,None),
+	(1,26,"GtkMisc","xpad","5",None,None,None,None,None)
+  </object_property>
+  <object_layout_property>
+	(1,11,13,"GtkBoxLayoutChild","position","3",None,None,None,None),
+	(1,11,19,"GtkBoxLayoutChild","position","2",None,None,None,None),
+	(1,13,14,"GtkBoxLayoutChild","pack-type","end",None,None,None,None),
+	(1,13,14,"GtkBoxLayoutChild","position","1",None,None,None,None),
+	(1,19,20,"GtkBoxLayoutChild","position","3",None,None,None,None),
+	(1,19,22,"GtkBoxLayoutChild","position","1",None,None,None,None),
+	(1,19,23,"GtkBoxLayoutChild","position","5",None,None,None,None),
+	(1,19,25,"GtkBoxLayoutChild","position","2",None,None,None,None),
+	(1,19,26,"GtkBoxLayoutChild","position","4",None,None,None,None)
+  </object_layout_property>
+</cambalache-project>

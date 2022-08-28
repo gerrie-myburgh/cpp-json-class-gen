@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.10.3 -->
+<interface>
+  <!-- interface-name gtk-test-03.ui -->
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkApplicationWindow" id="mainWindow">
+    <property name="name">GENERATE STRUCTS FROM JSON</property>
+    <property name="resizable">False</property>
+    <child>
+      <object class="GtkBox" id="theBox">
+        <property name="halign">baseline</property>
+        <property name="margin-right">5</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox">
+            <property name="halign">end</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label">JSON File</property>
+                <property name="xpad">5</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkFileChooserButton" id="sourceJsonFile">
+                <property name="title">Select a JSON File</property>
+                <property name="tooltip-text">Source Json File</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label">CPP Folder</property>
+                <property name="xpad">5</property>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFileChooserButton" id="srcLocation">
+                <property name="action">select-folder</property>
+                <property name="create-folders">False</property>
+                <property name="halign">start</property>
+                <property name="title">Select a folder</property>
+                <property name="tooltip-text">Where cpp file must be written to</property>
+              </object>
+              <packing>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label">HPP Folder</property>
+                <property name="xpad">5</property>
+              </object>
+              <packing>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFileChooserButton" id="includeLocation">
+                <property name="action">select-folder</property>
+                <property name="title">Select a Folder</property>
+                <property name="tooltip-text">Where hpp file must be written to</property>
+              </object>
+              <packing>
+                <property name="position">5</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="halign">end</property>
+            <child>
+              <object class="GtkButton" id="generateCode">
+                <property name="border-width">2</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">generate</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="exitButton">
+                <property name="border-width">2</property>
+                <property name="valign">center</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Exit</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="pack-type">end</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
