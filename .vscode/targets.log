@@ -1,0 +1,537 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Sat Aug 27 05:41:36 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# makefile (from 'Makefile', line 18)
+OUTPUT := output
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 21)
+SRC := src
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+SSH_AGENT_LAUNCHER = gnome-keyring
+# environment
+WM_OSTYPE = POSIX
+# environment
+WM_ARCH_OPTION = 64
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 44)
+MD := mkdir -p
+# environment
+WM_CXX = g++
+# environment
+LC_NAME = en_ZA.UTF-8
+# environment
+LC_NUMERIC = en_ZA.UTF-8
+# environment
+VSCODE_CWD = /home/gerrie
+# environment
+WINDOWPATH = 2
+# makefile (from 'Makefile', line 51)
+LIBS := -lboost_json -lboost_filesystem -Llib
+# environment
+WM_PRECISION_OPTION = DP
+# environment
+LC_ADDRESS = en_ZA.UTF-8
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+ParaView_MAJOR = 5.6
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+WM_LABEL_OPTION = Int32
+# default
+.VARIABLES := 
+# environment
+PWD = /home/gerrie/Media/Workspace/gtk3-gen-cpp-from-json
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/gerrie/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/gerrie/.config/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# environment
+WM_PROJECT = OpenFOAM
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/gerrie/Media/Workspace/gtk3-gen-cpp-from-json
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+WM_COMPILE_OPTION = Opt
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# environment
+FOAM_SETTINGS = 
+# makefile (from 'Makefile', line 65)
+OUTPUTMAIN := output/json-to-cpp
+ 
+# environment
+FOAM_RUN = /home/gerrie/OpenFOAM/gerrie-9/run
+# environment
+FOAM_APPBIN = /opt/openfoam9/platforms/linux64GccDPInt32Opt/bin
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+MPI_ARCH_PATH = /usr/lib/x86_64-linux-gnu/openmpi
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+WM_COMPILER_TYPE = system
+# environment
+VSCODE_PID = 6906
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+WM_LABEL_SIZE = 32
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+FOAM_MPI = openmpi-system
+# makefile (from 'Makefile', line 48)
+INCLUDES := -Iinclude
+# environment
+WM_THIRD_PARTY_DIR = /opt/ThirdParty-9
+# environment
+SESSION_MANAGER = local/gerrie-myburgh:@/tmp/.ICE-unix/3956,unix/gerrie-myburgh:/tmp/.ICE-unix/3956
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WM_MPLIB = SYSTEMOPENMPI
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# makefile (from 'Makefile', line 27)
+LIB := lib
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 24)
+INCLUDE := include
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=ibus
+# environment
+LD_LIBRARY_PATH = /opt/ThirdParty-9/platforms/linux64Gcc/gperftools-svn/lib:/opt/openfoam9/platforms/linux64GccDPInt32Opt/lib/paraview-5.6:/opt/paraviewopenfoam56/lib:/opt/openfoam9/platforms/linux64GccDPInt32Opt/lib/openmpi-system:/opt/ThirdParty-9/platforms/linux64GccDPInt32/lib/openmpi-system:/usr/lib/x86_64-linux-gnu/openmpi/lib:/home/gerrie/OpenFOAM/gerrie-9/platforms/linux64GccDPInt32Opt/lib:/opt/site/9/platforms/linux64GccDPInt32Opt/lib:/opt/openfoam9/platforms/linux64GccDPInt32Opt/lib:/opt/ThirdParty-9/platforms/linux64GccDPInt32/lib:/opt/openfoam9/platforms/linux64GccDPInt32Opt/lib/dummy
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /home/gerrie/home/gerrie/OpenFOAM/gerrie-9/platforms/linux64GccDPInt32Opt/bin:/home/gerrie/bin/ParaView-5.9.1-MPI-Linux-Python3.8-64bit/bin/:/home/gerrie/.local/bin:/home/gerrie/bin:/opt/ThirdParty-9/platforms/linux64Gcc/gperftools-svn/bin:/opt/paraviewopenfoam56/bin:/opt/ThirdParty-9/platforms/linux64Gcc/cmake-*/bin:/home/gerrie/OpenFOAM/gerrie-9/platforms/linux64GccDPInt32Opt/bin:/opt/site/9/platforms/linux64GccDPInt32Opt/bin:/opt/openfoam9/platforms/linux64GccDPInt32Opt/bin:/opt/openfoam9/bin:/opt/openfoam9/wmake:/home/gerrie/home/gerrie/bin/ParaView-5.9.1-MPI-Linux-Python3.8-64bit/bin/:/home/gerrie/.local/bin:/home/gerrie/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# default
+MAKEFILES := 
+# environment
+LANGUAGE = en_GB:en
+# environment
+FOAM_SITE_APPBIN = /opt/site/9/platforms/linux64GccDPInt32Opt/bin
+# environment
+ParaView_GL = mesa
+# environment
+LC_MONETARY = en_ZA.UTF-8
+# automatic
+^F = $(notdir $^)
+# environment
+WM_OPTIONS = linux64GccDPInt32Opt
+# environment
+FOAM_ETC = /opt/openfoam9/etc
+# environment
+FOAM_INST_DIR = /opt
+# environment
+LC_TIME = en_ZA.UTF-8
+# environment
+WM_PROJECT_USER_DIR = /home/gerrie/OpenFOAM/gerrie-9
+# makefile (from 'Makefile', line 38)
+MAIN := json-to-cpp
+# environment
+ParaView_VERSION = 5.6.0
+# environment
+INVOCATION_ID = c28ef77d8e9b43859b00600e848414d0
+# makefile (from 'Makefile', line 41)
+LIBDIRS := lib
+# environment
+FOAM_TUTORIALS = /opt/openfoam9/tutorials
+# environment
+FOAM_JOB_DIR = /opt/jobControl
+# environment
+USERNAME = gerrie
+# environment
+WM_CFLAGS = -m64 -fPIC
+# environment
+LC_TELEPHONE = en_ZA.UTF-8
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# automatic
+?F = $(notdir $?)
+# makefile (from 'Makefile', line 40)
+INCLUDEDIRS := include
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LS_COLORS = 
+# automatic
+ 
++F = $(notdir $+)
+# environment
+DESKTOP_SESSION = ubuntu
+# environment
+FOAM_APP = /opt/openfoam9/applications
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+WM_PROJECT_DIR = /opt/openfoam9
+# environment
+PV_PLUGIN_PATH = /opt/openfoam9/platforms/linux64GccDPInt32Opt/lib/paraview-5.6
+# makefile (from 'Makefile', line 57)
+OBJECTS := src/gen_cpp_source.o src/gen_hpp_source.o src/main.o src/utils.o
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+FOAM_SIGFPE = 
+# environment
+LOGNAME = gerrie
+# environment
+WM_PROJECT_INST_DIR = /opt
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# environment
+FOAM_USER_APPBIN = /home/gerrie/OpenFOAM/gerrie-9/platforms/linux64GccDPInt32Opt/bin
+# makefile
+.DEFAULT_GOAL := all
+# environment
+SYSTEMD_EXEC_PID = 3975
+# makefile (from 'Makefile', line 43)
+RM = rm -f
+# environment
+DISPLAY = :1
+# environment
+USER = gerrie
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+FOAM_SOLVERS = /opt/openfoam9/applications/solvers
+# default
+MAKE_VERSION := 4.3
+# 'override' directive
+.SHELLSTATUS := 0
+# makefile (from 'Makefile', line 42)
+FIXPATH = $1
+# environment
+FOAM_EXT_LIBBIN = /opt/ThirdParty-9/platforms/linux64GccDPInt32/lib
+# environment
+MANAGERPID = 3737
+# environment
+WM_LDFLAGS = -m64
+# environment
+WM_LINK_LANGUAGE = c++
+# environment
+LC_MEASUREMENT = en_ZA.UTF-8
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6906
+# makefile (from 'Makefile', line 39)
+SOURCEDIRS := src
+# environment
+_ = /usr/share/code/code
+# environment
+LC_PAPER = en_ZA.UTF-8
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+WM_DIR = /opt/openfoam9/wmake
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+MPI_BUFFER_SIZE = 20000000
+# environment
+JOURNAL_STREAM = 8:34753
+# environment
+WM_CC = gcc
+# environment
+ 
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+FOAM_UTILITIES = /opt/openfoam9/applications/utilities
+# environment
+HOME = /home/gerrie
+# environment
+QT_IM_MODULE = ibus
+# environment
+ParaView_INCLUDE_DIR = /opt/paraviewopenfoam56/include/paraview-5.6
+# environment
+WM_PROJECT_VERSION = 9
+# environment
+FOAM_SRC = /opt/openfoam9/src
+# environment
+ParaView_DIR = /opt/paraviewopenfoam56
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-158bf51c-1.70.2-main.sock
+# environment
+IM_CONFIG_PHASE = 1
+# environment
+PAPERSIZE = a4
+# environment
+WM_ARCH = linux64
+# default
+.RECIPEPREFIX := 
+# environment
+ParaView_LIB_DIR = /opt/paraviewopenfoam56/lib
+# automatic
+<F = $(notdir $<)
+# environment
+WM_CXXFLAGS = -m64 -fPIC -std=c++0x
+# default
+SUFFIXES := 
+# environment
+FOAM_LIBBIN = /opt/openfoam9/platforms/linux64GccDPInt32Opt/lib
+# makefile (from 'Makefile', line 10)
+CXXFLAGS := -std=c++20 -Wall -Wextra -g `pkg-config gtkmm-3.0 --cflags`
+# environment
+WM_COMPILER = Gcc
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 7)
+CXX = g++
+# makefile (from 'Makefile', line 15)
+LFLAGS = `pkg-config gtkmm-3.0 --libs`
+# makefile (from 'Makefile', line 54)
+SOURCES := src/gen_cpp_source.cpp src/gen_hpp_source.cpp src/main.cpp src/utils.cpp
+ 
+# environment
+FOAM_USER_LIBBIN = /home/gerrie/OpenFOAM/gerrie-9/platforms/linux64GccDPInt32Opt/lib
+# environment
+FOAM_SITE_LIBBIN = /opt/site/9/platforms/linux64GccDPInt32Opt/lib
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+WM_COMPILER_LIB_ARCH = 64
+# environment
+GDMSESSION = ubuntu
+# environment
+LC_IDENTIFICATION = en_ZA.UTF-8
+# variable set hash-table stats:
+# Load=178/1024=17%, Rehash=0, Collisions=26/246=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src (device 2049, inode 237240547): 10 files, no impossibilities.
+# . (device 2049, inode 237240540): 18 files, no impossibilities.
+
+# 28 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-21 07:03:14.812958512
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/utils.o:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-08-26 19:48:03.410273971
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 85):
+	$(RM) $(OUTPUTMAIN)
+	$(RM) $(call FIXPATH,$(OBJECTS))
+	@echo Cleanup complete!
+
+.cpp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 81):
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $<  -o $@
+
+# Not a target:
+src/gen_cpp_source.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 19:46:28.753509129
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/main.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 19:59:36.467704126
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+ 
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+output:
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-26 19:59:36.475703909
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 71):
+	$(MD) $(OUTPUT)
+
+all: output json-to-cpp
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/10=0%
+#  recipe to execute (from 'Makefile', line 68):
+	@echo Executing 'all' complete!
+
+run: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 90):
+	./$(OUTPUTMAIN)
+	@echo Executing 'run: all' complete!
+
+json-to-cpp: src/gen_cpp_source.o src/gen_hpp_source.o src/main.o src/utils.o
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+ 
+# @ := json-to-cpp
+# automatic
+# * := 
+# automatic
+# < := src/gen_cpp_source.o
+# automatic
+# + := src/gen_cpp_source.o src/gen_hpp_source.o src/main.o src/utils.o
+# automatic
+# % := 
+# automatic
+# ^ := src/gen_cpp_source.o src/gen_hpp_source.o src/main.o src/utils.o
+# automatic
+# ? := src/gen_cpp_source.o src/gen_hpp_source.o src/main.o src/utils.o
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=4/18=22%
+#  recipe to execute (from 'Makefile', line 74):
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(OUTPUTMAIN) $(OBJECTS) $(LFLAGS) $(LIBS)
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/gen_hpp_source.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 19:44:24.648912992
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=14/1024=1%, Rehash=0, Collisions=0/37=0%
+# VPATH Search Paths
+
+ 
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 40 / storage = 475 B / avg = 11 B
+# current buf: size = 8162 B / used = 475 B / count = 40 / avg = 11 B
+
+# strcache performance: lookups = 61 / hit rate = 34%
+# hash-table stats:
+# Load=40/8192=0%, Rehash=0, Collisions=0/61=0%
+# Finished Make data base on Sat Aug 27 05:41:36 2022
+
+ 

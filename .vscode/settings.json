@@ -1,0 +1,29 @@
+{
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "*DIct": "OpenFOAM",
+        "*Properties": "OpenFOAM",
+        "fvSchemes": "OpenFOAM",
+        "fvSolution": "OpenFOAM",
+        "**/constant/g\"": "OpenFOAM",
+        "**/0/*": "OpenFOAM",
+        "ostream": "cpp"
+    },
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:gtk3-test}/gtk-test-03.cmb.db",
+            "name": "gtk-gui-builder",
+            "group": "xxx"
+        }
+    ],
+    "sqltools.useNodeRuntime": true,
+    "spellright.language": [
+        "af_ZA"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex"
+    ]
+}

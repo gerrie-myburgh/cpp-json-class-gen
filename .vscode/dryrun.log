@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/gerrie/Media/Workspace/gtk3-gen-cpp-from-json'
+ 
+mkdir -p output
+g++ -std=c++20 -Wall -Wextra -g `pkg-config gtkmm-3.0 --cflags` -Iinclude -c src/gen_cpp_source.cpp  -o src/gen_cpp_source.o
+g++ -std=c++20 -Wall -Wextra -g `pkg-config gtkmm-3.0 --cflags` -Iinclude -c src/gen_hpp_source.cpp  -o src/gen_hpp_source.o
+g++ -std=c++20 -Wall -Wextra -g `pkg-config gtkmm-3.0 --cflags` -Iinclude -c src/main.cpp  -o src/main.o
+g++ -std=c++20 -Wall -Wextra -g `pkg-config gtkmm-3.0 --cflags` -Iinclude -c src/utils.cpp  -o src/utils.o
+g++ -std=c++20 -Wall -Wextra -g `pkg-config gtkmm-3.0 --cflags` -Iinclude -o output/json-to-cpp src/gen_cpp_source.o src/gen_hpp_source.o src/main.o src/utils.o `pkg-config gtkmm-3.0 --libs` -lboost_json -lboost_filesystem -Llib
+echo Executing 'all' complete!
+make: Leaving directory '/home/gerrie/Media/Workspace/gtk3-gen-cpp-from-json'
+ 
