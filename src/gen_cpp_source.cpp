@@ -117,9 +117,9 @@ string get_json_write_value(const json::value value, string name, string mainNam
                                  "%1%}\n") %
                           indent(3) % name);
         else if (val.is_string())
-            result += str(format("%1%if(holds_alternative<string>(element))\n"
+            result += str(format("%1%if(holds_alternative<json::string>(element))\n"
                                  "%1%{\n"
-                                 "%1%    val[\"%2%\"].as_array().push_back( get<string>(element) );\n"
+                                 "%1%    val[\"%2%\"].as_array().push_back( get<json::string>(element) );\n"
                                  "%1%}\n") %
                           indent(3) % name);
         else if (val.is_double())
@@ -227,7 +227,7 @@ string get_value(json::value v, string name, string mainName, int count)
                 format(
                     "%1%        if(element.is_string())\n"
                     "%1%        {\n"
-                    "%1%            %2%_variant val = (string)element.as_string();\n"
+                    "%1%            %2%_variant val = (json::string)element.as_string();\n"
                     "%1%            %2%.push_back(val);\n"
                     "%1%        }\n") %
                 indent(2) % name);
@@ -292,7 +292,7 @@ string get_array_values(json::value value, string name, string mainName)
 }
 string get_destructor_cpp(string name)
 {
-    return str(format("%1%~%3%_%2%::%3%_%2%(){}\n") % indent(1) % name % mainName);
+    return str(format("%1%%3%_%2%::~%3%_%2%(){}\n") % indent(1) % name % mainName);
 }
 /**
  * @brief Generate cpp constructor method

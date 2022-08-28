@@ -91,7 +91,7 @@ string get_hpp_types(string objName, json::array array)
         }
         else if (val.is_string())
         {
-            result += "string";
+            result += "json::string";
         }
         else if (val.is_object())
         {
@@ -127,7 +127,7 @@ string get_attrs_hpp(const json::object obj)
 
         if (val.is_string())
         {
-            result += str(format("%1%string %2% = \"\";\n") % indent(2) % key);
+            result += str(format("%1%json::string %2% = \"\";\n") % indent(2) % key);
         }
         else if (val.is_int64())
         {
