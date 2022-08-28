@@ -125,11 +125,11 @@ string get_attrs_hpp(const json::object obj)
 
         if (val.is_string())
         {
-            result += str(format("%1%json::string %2% = \"\";\n") % indent(2) % key);
+            result += str(format("%1%string %2% = \"\";\n") % indent(2) % key);
         }
         else if (val.is_int64())
         {
-            result += str(format("%1%long          %2% = 0;\n") % indent(2) % key);
+            result += str(format("%1%long %2% = 0;\n") % indent(2) % key);
         }
         else if (val.is_uint64())
         {
@@ -137,7 +137,11 @@ string get_attrs_hpp(const json::object obj)
         }
         else if (val.is_double())
         {
-            result += str(format("%1%double       %2% = 0.0;\n") % indent(2) % key);
+            result += str(format("%1%double %2% = 0.0;\n") % indent(2) % key);
+        }
+        else if (val.is_bool())
+        {
+            result += str(format("%1%bool %2% = false;\n") % indent(2) % key);
         }
         else if (val.is_array() && val.as_array().size() > 0)
         {
