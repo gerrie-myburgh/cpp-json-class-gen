@@ -290,6 +290,10 @@ string get_array_values(json::value value, string name, string mainName)
     }
     return result;
 }
+string get_destructor_cpp(string name)
+{
+    return str(format("%1%~%3%_%2%::%3%_%2%(){}\n") % indent(1) % name % mainName);
+}
 /**
  * @brief Generate cpp constructor method
  *
@@ -370,6 +374,7 @@ void get_object_cpp(const json::object obj, string name, ofstream &out)
                name % mainName % get_cpp_headers(obj);
 
     out << get_constructor_cpp(obj, name);
+    out << get_destructor_cpp(name);
     out << get_json_cpp(obj, name);
 
     out << format("}\n");

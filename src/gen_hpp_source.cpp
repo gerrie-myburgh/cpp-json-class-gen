@@ -55,6 +55,8 @@ void get_methods_hpp(string name, ofstream &out)
     out << indent(2) << mainName << "_" << name << "(json::value& val);"
         << endl;
     out << indent(2) << "json::object get_json();" << endl;
+    out << indent(2) << "~" << mainName << "_" << name << "();" << endl;
+
 }
 /**
  * @brief Get the Types object for an array of objects
