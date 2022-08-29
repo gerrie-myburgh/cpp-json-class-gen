@@ -158,8 +158,7 @@ string get_json_cpp(const json::object obj, string name)
 {
     string result = "";
 
-    result += str(format("%1%json::object %4%_%3%::get_json(){\n"
-                         "%2%json::object val;\n") %
+    result += str(format("%1%json::object %4%_%3%::get_json(){\n") %
                   indent(1) % indent(2) % name % mainName);
 
     for (auto it : obj)
@@ -214,7 +213,7 @@ string get_value(json::value v, string name, string mainName, int count)
                              "%1%            %2%.push_back(val);\n"
                              "%1%        }\n") %
                       indent(2) % name);
-    if (v.is_uint64())
+    else if (v.is_uint64())
         result += str(format("%1%        if(element.is_int64())\n"
                              "%1%        {\n"
                              "%1%            %2%_variant val = (unsigned long)element.as_int64();\n"
@@ -251,21 +250,24 @@ string get_value(json::value v, string name, string mainName, int count)
     else if (v.is_object())
     {
         auto obj = v.as_object();
-        for (auto o : obj)
-        {
+        for_each(obj.begin(), obj.end(), [name,mainName,count,&obj,&result](auto o) {
             auto key = o.key();
             auto value = o.value();
-            if(value.is_object())
-                result +=
-                    str(
-                        format(
-                            "%1%        if(%6%)\n"
-                            "%1%        {\n"
-                            "%1%            %3%_variant val = %4%_%3%%5%(element);\n"
-                            "%1%            %3%.push_back(val);\n"
-                            "%1%        }\n") %
-                            indent(2) % key % name % mainName % count % get_obj_path(obj));
-        }
+            if(!value.is_object())
+            result +=
+                str(
+                    format(
+                        "%1%        if(%6%)\n"
+                        "%1%        {\n"
+                        "%1%            %3%_variant val = %4%_%3%%5%(element);\n"
+                        "%1%            %3%.push_back(val);\n"
+                        "%1%        }\n") %
+                        indent(2) % key % name % mainName % count % get_obj_path(obj)); 
+        });
+    }
+    else
+    {
+        result += str(format("/* unknown %1% */\n") % v);
     }
     return result;
 }
@@ -304,7 +306,7 @@ string get_destructor_cpp(string name)
 string get_constructor_cpp(const json::object obj, string name)
 {
     string result = "";
-    result += str(format("%1%%4%_%2%::%4%_%2%(json::value& val){\n"
+    result += str(format("%1%%4%_%2%::%4%_%2%(json::value val){\n"
                          "%3%json::error_code ec;\n") %
                   indent(1) % name % indent(2) % mainName);
     json::error_code ec;
@@ -342,14 +344,14 @@ string get_constructor_cpp(const json::object obj, string name)
         else if (val.is_array() && val.as_array().size() > 0)
         {
             get_cpp_types(key, val.as_array());
-            result += str(format("%1%if (val.find_pointer(\"/%3%\", ec)!=nullptr) \n"
+            result += str(format("%1%if (val.find_pointer(\"/%3%\", ec)!=nullptr)/*  %4%  */\n"
                                  "%1%{\n"
                                  "%1%    for(auto element : val.find_pointer(\"/%3%\", ec)->as_array())\n"
                                  "%1%    {\n"
                                  "%2%    "
                                  "%1%}\n"
                                  "%1%}\n") %
-                          indent(2) % get_array_values(val, key, mainName) % key);
+                          indent(2) % get_array_values(val, key, mainName) % key % val);
         }
     }
     result += str(format("%1%}\n") % indent(1));

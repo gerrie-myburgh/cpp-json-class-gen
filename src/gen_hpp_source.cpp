@@ -52,7 +52,7 @@ string get_headers(const json::object obj)
  */
 void get_methods_hpp(string name, ofstream &out)
 {
-    out << indent(2) << mainName << "_" << name << "(json::value& val);"
+    out << indent(2) << mainName << "_" << name << "(json::value val);"
         << endl;
     out << indent(2) << "json::object get_json();" << endl;
     out << indent(2) << "~" << mainName << "_" << name << "();" << endl;
@@ -183,7 +183,8 @@ void get_object_hpp(const json::object obj, string name, ofstream &out)
         "using namespace std;\n"
         "using namespace boost;\n"
         "namespace %3% {\n"
-        "%1%struct %3%_%4%{\n") % indent(1) % get_headers(obj) % mainName % name;
+        "%1%struct %3%_%4%{\n"
+        "%1%    json::object val;\n") % indent(1) % get_headers(obj) % mainName % name;
 
     out << get_attrs_hpp(obj);
     get_methods_hpp(name, out);
