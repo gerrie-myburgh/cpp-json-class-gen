@@ -72,17 +72,16 @@ string get_cpp_headers(const json::object obj)
     }
     return result;
 }
-string get_obj_path(json::object obj) 
+string get_obj_path(json::object obj)
 {
     string result = "";
     auto count = 0;
-    for(auto o : obj)
+    for (auto o : obj)
     {
         auto key = o.key();
         auto value = o.value();
-        
-        result += str(format("%2%element.find_pointer(\"/%1%\", ec)!=nullptr")
-                    % key % (count > 0 ? " && " : ""));
+
+        result += str(format("%2%element.find_pointer(\"/%1%\", ec)!=nullptr") % key % (count > 0 ? " && " : ""));
         count++;
     }
     return result;
@@ -99,7 +98,7 @@ string get_json_write_value(const json::value value, string name, string mainNam
 {
     string result = "";
     int max_counter = value.as_array().size();
-    for(int counter = 0; counter < max_counter; counter++)
+    for (int counter = 0; counter < max_counter; counter++)
     {
         json::value val = value.at(counter);
 
@@ -183,10 +182,11 @@ string get_json_cpp(const json::object obj, string name)
         else if (val.is_array())
         {
             result += str(format(
-                "%1%if(%3%.size() > 0) val[\"%3%\"] = json::array();\n"
-                "%1%for(auto element : %3%){\n"
-                "%2%"
-                "%1%}\n") % indent(2) % get_json_write_value(val, key, mainName) % key);
+                              "%1%if(%3%.size() > 0) val[\"%3%\"] = json::array();\n"
+                              "%1%for(auto element : %3%){\n"
+                              "%2%"
+                              "%1%}\n") %
+                          indent(2) % get_json_write_value(val, key, mainName) % key);
         }
     }
     result += str(format("%1%return val;\n") % indent(2));
@@ -195,13 +195,18 @@ string get_json_cpp(const json::object obj, string name)
     return result;
 }
 /**
+ * @brief the set of path kept - used to prevet duplicate paths from traversed
+ *
+ */
+set<string> objectPath;
+/**
  * @brief Get the value object
- * 
- * @param v 
+ *
+ * @param v
  * @param name
- * @param mainName 
- * @param count 
- * @return string 
+ * @param mainName
+ * @param count
+ * @return string
  */
 string get_value(json::value v, string name, string mainName, int count)
 {
@@ -250,25 +255,26 @@ string get_value(json::value v, string name, string mainName, int count)
     else if (v.is_object())
     {
         auto obj = v.as_object();
-        for_each(obj.begin(), obj.end(), [name,mainName,count,&obj,&result](auto o) {
+        for_each(obj.begin(), obj.end(), [name, mainName, count, &obj, &result](auto o)
+                 {
             auto key = o.key();
             auto value = o.value();
-            if(!value.is_object())
-            result +=
-                str(
-                    format(
-                        "%1%        if(%6%)\n"
-                        "%1%        {\n"
-                        "%1%            %3%_variant val = %4%_%3%%5%(element);\n"
-                        "%1%            %3%.push_back(val);\n"
-                        "%1%        }\n") %
-                        indent(2) % key % name % mainName % count % get_obj_path(obj)); 
-        });
+            auto pathValue = get_obj_path(obj);
+            if(!objectPath.contains(pathValue))
+            {
+                objectPath.insert(pathValue);
+                result +=
+                    str(
+                        format(
+                            "%1%        if(%6%)\n"
+                            "%1%        {\n"
+                            "%1%            %3%_variant val = %4%_%3%%5%(element);\n"
+                            "%1%            %3%.push_back(val);\n"
+                            "%1%        }\n") %
+                            indent(2) % key % name % mainName % count % pathValue); 
+            } });
     }
-    else
-    {
-        result += str(format("/* unknown %1% */\n") % v);
-    }
+    objectPath.clear();
     return result;
 }
 /**
@@ -282,13 +288,13 @@ string get_value(json::value v, string name, string mainName, int count)
 string get_array_values(json::value value, string name, string mainName)
 {
     auto val = value.as_array();
-    int count = 0;
 
     string result = "";
-
-    for (auto v : val)
+    int max_count = val.size();
+    for (int count = 0; count < max_count; count++)
     {
-        result += get_value(v, name, mainName, count++);
+        auto v = value.at(count);
+        result += get_value(v, name, mainName, count);
     }
     return result;
 }
@@ -312,8 +318,8 @@ string get_constructor_cpp(const json::object obj, string name)
     json::error_code ec;
     for (auto it : obj)
     {
-        string key = it.key();
-        json::value val = it.value();
+        auto key = it.key();
+        auto val = it.value();
 
         if (val.is_string())
         {
