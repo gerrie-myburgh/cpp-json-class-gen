@@ -20,10 +20,11 @@
     ],
     "sqltools.useNodeRuntime": true,
     "spellright.language": [
-        "af_ZA"
+        "en-GB-9-0."
     ],
     "spellright.documentTypes": [
         "markdown",
-        "latex"
+        "latex",
+        "plaintext"
     ]
 }

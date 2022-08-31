@@ -52,9 +52,11 @@ string get_headers(const json::object obj)
  */
 void get_methods_hpp(string name, ofstream &out)
 {
-    out << indent(2) << mainName << "_" << name << "(json::value& val);"
+    out << indent(2) << mainName << "_" << name << "(json::value val);"
         << endl;
     out << indent(2) << "json::object get_json();" << endl;
+    out << indent(2) << "~" << mainName << "_" << name << "();" << endl;
+
 }
 /**
  * @brief Get the Types object for an array of objects
@@ -89,7 +91,7 @@ string get_hpp_types(string objName, json::array array)
         }
         else if (val.is_string())
         {
-            result += "string";
+            result += "json::string";
         }
         else if (val.is_object())
         {
@@ -129,7 +131,7 @@ string get_attrs_hpp(const json::object obj)
         }
         else if (val.is_int64())
         {
-            result += str(format("%1%long          %2% = 0;\n") % indent(2) % key);
+            result += str(format("%1%long %2% = 0;\n") % indent(2) % key);
         }
         else if (val.is_uint64())
         {
@@ -137,7 +139,11 @@ string get_attrs_hpp(const json::object obj)
         }
         else if (val.is_double())
         {
-            result += str(format("%1%double       %2% = 0.0;\n") % indent(2) % key);
+            result += str(format("%1%double %2% = 0.0;\n") % indent(2) % key);
+        }
+        else if (val.is_bool())
+        {
+            result += str(format("%1%bool %2% = false;\n") % indent(2) % key);
         }
         else if (val.is_array() && val.as_array().size() > 0)
         {
@@ -177,7 +183,8 @@ void get_object_hpp(const json::object obj, string name, ofstream &out)
         "using namespace std;\n"
         "using namespace boost;\n"
         "namespace %3% {\n"
-        "%1%struct %3%_%4%{\n") % indent(1) % get_headers(obj) % mainName % name;
+        "%1%struct %3%_%4%{\n"
+        "%1%    json::object val;\n") % indent(1) % get_headers(obj) % mainName % name;
 
     out << get_attrs_hpp(obj);
     get_methods_hpp(name, out);
