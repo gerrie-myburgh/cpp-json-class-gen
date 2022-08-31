@@ -56,7 +56,7 @@ string get_methods_hpp(string name)
     result += str(format(
         "%1%%3%_%2%(json::value val);\n"
         "%1%json::object get_json();\n"
-        "%1%~%3%%2%();\n") % indent(2) % name % mainName);
+        "%1%~%3%_%2%();\n") % indent(2) % name % mainName);
     return result;
 }
 /**
