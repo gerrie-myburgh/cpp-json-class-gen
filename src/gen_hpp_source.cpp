@@ -50,13 +50,14 @@ string get_headers(const json::object obj)
  * @param name
  * @param out
  */
-void get_methods_hpp(string name, ofstream &out)
+string get_methods_hpp(string name)
 {
-    out << indent(2) << mainName << "_" << name << "(json::value val);"
-        << endl;
-    out << indent(2) << "json::object get_json();" << endl;
-    out << indent(2) << "~" << mainName << "_" << name << "();" << endl;
-
+    string result = "";
+    result += str(format(
+        "%1%%3%_%2%(json::value val);\n"
+        "%1%json::object get_json();\n"
+        "%1%~%3%%2%();\n") % indent(2) % name % mainName);
+    return result;
 }
 /**
  * @brief Get the Types object for an array of objects
@@ -187,7 +188,7 @@ void get_object_hpp(const json::object obj, string name, ofstream &out)
         "%1%    json::object val;\n") % indent(1) % get_headers(obj) % mainName % name;
 
     out << get_attrs_hpp(obj);
-    get_methods_hpp(name, out);
+    out << get_methods_hpp(name);
 
     out << format(
         "%1%};\n"
