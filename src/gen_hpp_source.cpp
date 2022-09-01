@@ -160,6 +160,7 @@ string get_attrs_hpp(const json::object obj)
             string fileName = hppDir + "/" + mainName + "_" + key + ".hpp";
             out.open(fileName, ofstream::out);
             get_object_hpp(val.as_object(), key, out);
+            out.close();
         }
     }
     return result;

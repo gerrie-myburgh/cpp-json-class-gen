@@ -34,6 +34,7 @@ void get_cpp_types(string objName, json::array array)
             out.open(fileName, ofstream::out);
             get_object_cpp(val.as_object(), objName + buffer, out);
             counter++;
+            out.close();
         }
     }
 }
@@ -397,6 +398,7 @@ void get_object_cpp(const json::object obj, string name, ofstream &out)
             string fileName = cppDir + "/" + mainName + "_" + key + ".cpp";
             out.open(fileName, ofstream::out);
             get_object_cpp(val.as_object(), key, out);
+            out.close();
         }
     }
 }
